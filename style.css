@@ -1,0 +1,5 @@
+.swiper-wrapper {
+    height: 100vh;
+    background-color: aqua;
+    overflow: hidden;
+}
