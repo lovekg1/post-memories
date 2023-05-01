@@ -3,3 +3,16 @@
     background-color: aqua;
     overflow: hidden;
 }
+
+.swiper-slide div {
+    height: 300px;
+    text-align: center;
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+}
+
+.text {
+    align-items: center;
+    justify-content: center;
+}

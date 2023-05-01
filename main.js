@@ -1,22 +1,19 @@
 var mySwiper = new Swiper('.swiper-container', {
-    direction: 'vertical',
-    loop: true,
-    allowTouchMove: false,
-    touchStartPreventDefault: false
+    direction: 'vertical', // Chuyển đổi slide theo chiều dọc
+    loop: true, // Lặp lại các slide
+    speed: 600, // Tốc độ chuyển đổi slide
+    allowTouchMove: true,
+    touchEventsTarget: 'container', // Tên DOM container sẽ lắng nghe sự kiện touch
+    touchStartPreventDefault: false, // Không preventDefault cho sự kiện touchstart
+    touchMoveStopPropagation: true, // Ngăn chặn sự kiện touchmove lây lan sang các phần tử khác
 });
 
-var touchStartY = 0;
+var isTouching = false;
 
-mySwiper.on('touchStart', function (e) {
-    touchStartY = e.touches[0].pageY;
+mySwiper.on('touchStart', function () {
+    isTouching = true;
 });
 
-mySwiper.on('touchMove', function (e) {
-    var touchEndY = e.changedTouches[0].pageY;
-    var diffY = touchEndY - touchStartY;
-    if (diffY < 0) {
-        mySwiper.slideNext();
-    } else if (diffY > 0) {
-        mySwiper.slidePrev();
-    }
+mySwiper.on('touchEnd', function () {
+    isTouching = false;
 });
