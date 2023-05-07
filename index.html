@@ -26,9 +26,22 @@
             </div>
         </div>
     </div>
+    <audio
+        src="./assets/mp3/Playlist 1 Hour - MASHUP hơn 10 bài HOT trên Tik Tok P1, P2, P3, P4 - Changmie x Tiến Tới x Ca Ca.mp3"></audio>
+    <div class="playAudio">
+        <div class="overlay"></div>
+        <div class="textPlayAudio">Hãy chạm vào màn hình</div>
+    </div>
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="./main.js"></script>
+    <script>
+        document.querySelector('.overlay').onclick = () => {
+            document.querySelector('audio').play()
+            document.querySelector('.overlay').remove()
+            document.querySelector('.textPlayAudio').remove()
+        }
+    </script>
 </body>
 
 </html>
