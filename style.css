@@ -4,13 +4,14 @@
     overflow: hidden;
 }
 
-.swiper-slide div {
-    height: 100%;
-    text-align: center;
-    background-color: white;
+.swiper-slide {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide-img {
+    width: 100%;
+    height: auto;
 }
 
 .text {
